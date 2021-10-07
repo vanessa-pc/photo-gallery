@@ -1,7 +1,13 @@
-import { greet } from "./utils/greet";
+import { Intro } from "./components/Intro";
+import UploadPhoto from "./components/UploadPhoto";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return (
+    <>
+    <Intro/>
+    <UploadPhoto />
+    </>
+  );
 }
 
 export default App;
