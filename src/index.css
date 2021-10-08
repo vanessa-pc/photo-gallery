@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
 :root{
     --lila: #ae7ad6;
@@ -31,9 +31,9 @@ body{
 .title h2{
     margin-top: 60px;
     font-size:  2.6rem;
-}
+} */
 /* upload form styles */
-form{
+/* form{
   margin: 30px auto 10px;
   text-align: center;
 }
@@ -72,10 +72,10 @@ label:hover{
     height: 5px;
     background: var(--lila);
     margin-top: 20px;
-}
+} */
 
 /* image grid styles */
-.img-list {
+/* .img-list {
     margin: 20px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -84,9 +84,9 @@ label:hover{
   .img .delete:not(){
     overflow: hidden;
     height: 0;
-    padding: 50% 0;
+    padding: 50% 0; */
     /* padding controls height, will always be perfectly square regardless of width */
-    position: relative;
+    /* position: relative;
     opacity: 0.8;
   }
 
@@ -97,10 +97,10 @@ label:hover{
     position: absolute;
     top: 0;
     left: 0;
-}
+} */
 
   /* modal styles */
-.backdrop{
+/* .backdrop{
     position: fixed;
     top: 0;
     left: 0;
@@ -115,4 +115,4 @@ label:hover{
     margin: 60px auto;
     box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
     border: 3px solid white;
-  }
+  } */

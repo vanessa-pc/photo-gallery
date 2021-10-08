@@ -9,12 +9,15 @@ export const AuthContext = React.createContext<firebase.User|null>(null);
 export const AuthProvider: React.FC =({ children }) => {
 
     const [user, setUser] = useState<firebase.User |null>(null);
+    const [pending, setPending] = useState<boolean>(true);
 
     useEffect( () => {
-        return projectAuth.onAuthStateChanged( (firebaseUser) => {
-            setUser(firebaseUser)
+        projectAuth.onAuthStateChanged( (firebaseUser) => {
+            setUser(firebaseUser);
+            setPending(false);
         });
     }, [])
+    if(pending) return <>Loading...</>
     return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
 
 }
