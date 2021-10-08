@@ -3,7 +3,7 @@ import ProgressBar from './ProgressBar';
 
 export default function UploadPhoto(): JSX.Element{
     
-    const [image, setImage] = useState<File|null>(null)
+    const [image, setImage] = useState<File|undefined>(undefined)
     const [error, setError] = useState("")
 
     const success = (file: File) => {
@@ -11,7 +11,7 @@ export default function UploadPhoto(): JSX.Element{
         setError("")
     }
     const failure = () => {
-        setImage(null) 
+        setImage(undefined) 
         alert("The file submitted is not an image!")
         setError("Please upload a file of type image.")
     }
@@ -24,11 +24,14 @@ export default function UploadPhoto(): JSX.Element{
     
 
     return (
-        <form action="">
+        <form >
+            <label>
             <input type="file" onChange={uploadForm}/>
+            <span>+</span>
+            </label>
             <div className="upload-result">
                 {error && <div className="error"> {error} </div> }
-                {image && <div className="success"> {image.name} </div> }
+                {image && <div> {image.name} </div> }
                 { image && <ProgressBar image={image} setImage={setImage}/>}
             </div>
         </form>

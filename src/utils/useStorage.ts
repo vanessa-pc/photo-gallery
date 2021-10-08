@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { projectStorage, projectFirestore,timestamp } from "../firebase/config";
 
-const useStorage = (image: File) => {
+const useStorage = (image: any) => {
   const [progress, setProgress] = useState(0)
-  const [error, setError] = useState<Error|null>(null)
-  const [url, setUrl] = useState<string|null>(null)
+  const [error, setError] = useState<Error|undefined>(undefined)
+  const [url, setUrl] = useState<string|undefined>(undefined)
 
   useEffect( () => {
 

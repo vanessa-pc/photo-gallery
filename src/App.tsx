@@ -1,19 +1,22 @@
-import { useState } from "react";
-import ImageList from "./components/ImageList";
-import { Intro } from "./components/Intro";
-import Modal from "./components/Modal";
-import UploadPhoto from "./components/UploadPhoto";
+import Main from "./components/Main";
+import {BrowserRouter as Router , Route } from 'react-router-dom'
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
+import { AuthProvider } from "./components/Authorization";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App(): JSX.Element {
-  const [selectedImage, setSelectedImage] =useState<string|undefined>(undefined)
 
   return (
-    <div className="App">
-    <Intro/>
-    <UploadPhoto />
-    <ImageList setSelectedImage={setSelectedImage}/>
-    { selectedImage && <Modal selectedImage={selectedImage} setSelectedImage={setSelectedImage}/>}
-    </div>
+    <AuthProvider>
+    <Router>
+      <div>
+        <PrivateRoute exact path="/" component={Main}  />
+        <Route exact path="/signin" component={Signin}  />
+        <Route exact path="/signup" component={Signup}  />
+      </div>
+    </Router>
+    </AuthProvider>
   );
 }
 

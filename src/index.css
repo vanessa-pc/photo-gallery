@@ -9,6 +9,7 @@
 body{
     font-family: 'Cookie', cursive;
     color: var(--lila);
+    background: var(--blue);
 }
 
 .App{
@@ -31,6 +32,41 @@ body{
     margin-top: 60px;
     font-size:  2.6rem;
 }
+/* upload form styles */
+form{
+  margin: 30px auto 10px;
+  text-align: center;
+}
+label input{
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+label{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  margin: 10px auto;
+  line-height: 30px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 24px;
+}
+label:hover{
+  background: var(--primary);
+  color: white;
+}
+.delete{
+}
+.upload-result{
+  height: 60px;
+  font-size: 0.8rem;
+}
+.error{
+  color: var(--error);
+}
 
 .progress-bar{
     height: 5px;
@@ -39,13 +75,13 @@ body{
 }
 
 /* image grid styles */
-.img-list{
+.img-list {
     margin: 20px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 40px;
   }
-  .img{
+  .img .delete:not(){
     overflow: hidden;
     height: 0;
     padding: 50% 0;
@@ -53,7 +89,8 @@ body{
     position: relative;
     opacity: 0.8;
   }
-  .img img{
+
+  .img img .delete:not(){
     min-width: 100%;
     min-height: 100%;
     max-width: 150%;

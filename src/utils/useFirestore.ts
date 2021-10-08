@@ -18,5 +18,5 @@ export default function useFirestore(collection: string){
             return () => unsub();
     }, [collection])
 
-    return { docs }
+    return { docs } 
 }
