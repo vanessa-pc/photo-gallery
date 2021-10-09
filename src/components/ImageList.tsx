@@ -10,7 +10,7 @@ export default function ImageList({setSelectedImage}:{setSelectedImage:React.Dis
 
     const handleDelete = (id:any) => {
         return projectFirestore.collection('images').doc(id).delete();
-      }
+    }
 
     return(
         <div className="img-list">

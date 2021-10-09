@@ -5,7 +5,8 @@ import { projectAuth } from "../firebase/config";
 
 // eslint-disable-next-line react/prop-types
 function Signup({ history }) {
-    const handleSignup = useCallback ( async event => {
+    const handleSignup = useCallback ( 
+        async event => {
         event.preventDefault();
         const { email, password } = event.target.elements;
         try {

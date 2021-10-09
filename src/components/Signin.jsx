@@ -25,6 +25,7 @@ function Signin({ history }) {
     } else {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         ({user} = useContext(AuthContext))
+
     }
     if (user){
         return <Redirect to="/" />;
