@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import swal from 'sweetalert';
 import ProgressBar from './ProgressBar';
 
 export default function UploadPhoto(): JSX.Element{
@@ -12,8 +13,8 @@ export default function UploadPhoto(): JSX.Element{
     }
     const failure = () => {
         setImage(undefined) 
-        alert("The file submitted is not an image!")
-        setError("Please upload a file of type image.")
+        swal("The file submitted is not an image!", "", "error")
+        setError("Please upload a file of type image!")
     }
     const uploadForm = (event: any) => {
         const fileSelected = event.target.files[0]
@@ -25,7 +26,7 @@ export default function UploadPhoto(): JSX.Element{
 
     return (
         <form >
-            <label>
+            <label className="form-label">
             <input type="file" onChange={uploadForm}/>
             <span>+</span>
             </label>

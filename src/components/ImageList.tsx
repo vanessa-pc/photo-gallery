@@ -21,17 +21,16 @@ export default function ImageList({setSelectedImage}:{setSelectedImage:React.Dis
                         layout
                         whileHover={{opacity: 1}}
                         onClick={() => setSelectedImage(doc.url)}>
-                        <motion.img src={doc.url} alt="small size" 
+                        <motion.img src={doc.url} alt="" loading="lazy"
                           initial={{opacity: 0}}
                           animate={{opacity:1}}
                           transition={{delay: 1}}
                           />
-                          <button className="delete" 
+                        <motion.button className="deletebtn"
                         onClick={() => handleDelete(doc.id)}>
                         Delete
-                    </button>
+                        </motion.button>
                     </motion.div>
-                    
                 </>
                 )
             })}
